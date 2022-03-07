@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(
 const content = {
   title: 'Rekrutacja',
   description:
-    'Śledź zakładkę rekrutacja, aby nie przegapić naboru oraz złożyć podanie. Czekamy na Ciebie !',
+    'Śledź zakładkę rekrutacja, aby nie przegapić naboru oraz złożyć podanie. Czekamy na Ciebie!',
 }
 const page = ({ data: article }) => {
   return (

@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(
 const content = {
   title: 'O szkole',
   description:
-    'Znajdziesz tu przydatne dokumenty oraz poznasz naszego Patrona i historię szkoły',
+    'Znajdziesz tu przydatne dokumenty oraz poznasz naszego Patrona i historię szkoły.',
 }
 const page = ({ data: article }) => {
   return (

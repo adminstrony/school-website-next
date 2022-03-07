@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(
 const content = {
   title: 'Egzaminy/Matura',
   description:
-    'Dowiedz jak przygotować się do egzaminów zawodowych oraz matury dzięki naszym artykułą',
+    'Dowiedz jak przygotować się do egzaminów zawodowych oraz matury dzięki naszym artykułą.',
 }
 const page = ({ data: article }) => {
   return (

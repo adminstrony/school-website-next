@@ -11,7 +11,7 @@ import Layout from '../templates/Layout.js'
 const content = {
   title: 'Poznaj naszą szkołę',
   description:
-    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego co robimy',
+    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego co robimy.',
 }
 
 export default function Home({ data: article }) {
