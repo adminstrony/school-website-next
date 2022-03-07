@@ -36,7 +36,11 @@ export const Header = () => {
             <Link href="/Stowarzyszenie/">Stowarzyszenie</Link>
           </div>
         </nav>
-        <button className="hamburger" onClick={() => setOpen(!open)}>
+        <button
+          className="hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
           <Image src={hamburger} alt="" />
         </button>
       </header>
