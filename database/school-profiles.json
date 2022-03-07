@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Liceum ogólnokształcące",
+    "description": "Załóż mundur i noś go z dumą. Otwórz przed sobą dzrzwi na nowe możliwości.",
+    "image": "/lic.svg",
+    "path": "/Kierunki"
+  },
+  {
+    "name": "Technikum o wybranym profilu",
+    "description": "Czyli mówisz, że nie liceum? To nic! Mamy dla ciebie mnóstwo profili zawodowych w technikum.",
+    "image": "/tech.svg",
+    "path": "/Kierunki"
+  },
+  {
+    "name": "Szkoła branżowa pierwszego stopnia",
+    "description": "Zależy ci na zawodzie ? Do zaoferowania mamy rówież ciekwą szkołę Branżową.",
+    "image": "/branz.svg",
+    "path": "/Kierunki"
+  }
+]
