@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(
 const content = {
   title: 'Ogłoszenia',
   description:
-    'Śledź na bierząco zmiany w podziale godzin, dni wolne od zajęć oraz komunikaty dyrektora.',
+    'Śledź na bieżąco zmiany w podziale godzin, dni wolne od zajęć oraz komunikaty dyrektora.',
 }
 const page = ({ data: article }) => {
   return (
