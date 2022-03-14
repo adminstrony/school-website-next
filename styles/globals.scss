@@ -188,6 +188,7 @@ a:hover + .kierunki-dropdown-menu {
 }
 
 .footer-icons {
+  transform: translateY(4px);
   display: flex;
   flex-direction: column;
   .icons {
