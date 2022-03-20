@@ -17,9 +17,7 @@ export const Hero = () => {
           kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.
         </p>
         <Link href="/Rekrutacja" passHref>
-          <button>
-            Dołącz do nas
-          </button>
+          <button>Dołącz do nas</button>
         </Link>
       </section>
       <section className="hero-images">

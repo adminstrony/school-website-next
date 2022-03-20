@@ -24,7 +24,7 @@ export const Header = () => {
           <p>|</p>
           <Link href="/Aktualnosci">Aktualności</Link>
           <div className="aktualnosci-dropdown-menu">
-            <Link href="/Ogloszenia/">Ogloszenia</Link>
+            <Link href="/Ogłoszenia/">Ogłoszenia</Link>
           </div>
           <Link href="/EgzaminyMatura">Egzaminy/Matura</Link>
           <Link href="/Rekrutacja">Rekrutacja</Link>
@@ -60,8 +60,8 @@ export const Header = () => {
             <Link href="/Aktualnosci/" passHref>
               <p>Aktualności</p>
             </Link>
-            <Link href="/Ogloszenia/" passHref>
-              <p>Ogloszenia</p>
+            <Link href="/Ogłoszenia/" passHref>
+              <p>Ogłoszenia</p>
             </Link>
             <Link href="/EgzaminyMatura/" passHref>
               <p>Egzaminy/Matura</p>

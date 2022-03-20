@@ -10,7 +10,7 @@ export const Footer = () => {
     <footer className="footer">
       <Image src={footerlogo} alt="" />
       <div className="footer-container">
-        <h6>Zespół Szkoł Nr 2 im. Jana Kochanowskiego w Łańcucie</h6>
+        <h6>Zespół Szkół Nr 2 im. Jana Kochanowskiego w Łańcucie</h6>
         <div className="footer-description">
           <Link
             href="https://www.google.com/maps/place/Zesp%C3%B3%C5%82+Szk%C3%B3%C5%82+nr+2+im.+J.+Kochanowskiego/@50.0914188,22.2312803,15z/data=!4m5!3m4!1s0x473cee970324f3a7:0x1d1b4a02738c9d6f!8m2!3d50.0914188!4d22.2312803"
