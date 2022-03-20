@@ -7,7 +7,7 @@ export const Aboutschool = () => {
   return (
     <section className="about-school">
       <div className="about-school-text">
-        <h2>Zastanawiasz się co wybrać ?</h2>
+        <h2>Zastanawiasz się co wybrać?</h2>
         <p>
           Nasza szkoła oferuje wszystkie ścieżki nauki wraz z
           najpopularniejszymi kierunkami i profilami dającymi realne
