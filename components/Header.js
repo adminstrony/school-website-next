@@ -15,9 +15,7 @@ export const Header = () => {
           </button>
         </Link>
         <nav className="nav">
-          <Link href="https://zs2lancut.pl/plan_lekcji/index.html">
-            Plan lekcji
-          </Link>
+          <Link href="https://plan-lekcji.vercel.app/">Plan lekcji</Link>
           <Link href="https://uonetplus.vulcan.net.pl/powiatlancucki/">
             e-Dziennik
           </Link>
