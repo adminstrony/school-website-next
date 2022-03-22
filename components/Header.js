@@ -46,7 +46,7 @@ export const Header = () => {
       {open && (
         <div className="navigation">
           <ul className="navigation__items">
-            <Link href="https://zs2lancut.pl/plan_lekcji/index.html" passHref>
+            <Link href="https://plan-lekcji.vercel.app/" passHref>
               <p>Plan lekcji</p>
             </Link>
             <Link
