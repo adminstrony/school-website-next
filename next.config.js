@@ -7,7 +7,7 @@ module.exports = {
     return [
       {
         source: '/plan_lekcji',
-        destination: 'https://plan_lekcji.zs2lancut.pl',
+        destination: 'https://plan-lekcji.zs2lancut.pl',
         permanent: true,
       },
       {
