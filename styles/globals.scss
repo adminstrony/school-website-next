@@ -127,6 +127,24 @@ p {
     justify-content: flex-end;
     display: none;
   }
+  a:nth-child(4)::after {
+    transform: translateY(-3px);
+    display: inline-block;
+    margin-left: 7px;
+    content: url(../public/arrow-down.svg);
+  }
+  a:nth-child(7)::after {
+    transform: translateY(-3px);
+    display: inline-block;
+    margin-left: 7px;
+    content: url(../public/arrow-down.svg);
+  }
+  a:nth-child(9)::after {
+    transform: translateY(-3px);
+    display: inline-block;
+    margin-left: 7px;
+    content: url(../public/arrow-down.svg);
+  }
 }
 
 a:hover + .kierunki-dropdown-menu {
@@ -151,24 +169,6 @@ a:hover + .kierunki-dropdown-menu {
 @media (min-width: 1140px) {
   .hamburger {
     display: none;
-  }
-  a:nth-child(4)::after {
-    transform: translateY(-3px);
-    display: inline-block;
-    margin-left: 7px;
-    content: url(../public/arrow-down.svg);
-  }
-  a:nth-child(7)::after {
-    transform: translateY(-3px);
-    display: inline-block;
-    margin-left: 7px;
-    content: url(../public/arrow-down.svg);
-  }
-  a:nth-child(9)::after {
-    transform: translateY(-3px);
-    display: inline-block;
-    margin-left: 7px;
-    content: url(../public/arrow-down.svg);
   }
 }
 
