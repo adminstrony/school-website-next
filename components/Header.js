@@ -15,10 +15,8 @@ export const Header = () => {
           </button>
         </Link>
         <nav className="nav">
-          <Link href="https://plan-lekcji.zs2lancut.pl/">Plan lekcji</Link>
-          <Link href="https://uonetplus.vulcan.net.pl/powiatlancucki/">
-            e-Dziennik
-          </Link>
+          <Link href="/plan_lekcji">Plan lekcji</Link>
+          <Link href="/dziennik">e-Dziennik</Link>
           <p>|</p>
           <Link href="/Aktualnosci">Aktualności</Link>
           <div className="aktualnosci-dropdown-menu">
@@ -51,15 +49,12 @@ export const Header = () => {
         <div className="navigation">
           <ul className="navigation__items">
             <p>
-              <Link href="https://plan-lekcji.zs2lancut.pl/" passHref>
+              <Link href="/plan_lekcji" passHref>
                 Plan lekcji
               </Link>
             </p>
             <p>
-              <Link
-                href="https://uonetplus.vulcan.net.pl/powiatlancucki/"
-                passHref
-              >
+              <Link href="/dziennik" passHref>
                 e-Dziennik
               </Link>
             </p>

@@ -11,6 +11,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/dziennik',
+        destination: 'https://uonetplus.vulcan.net.pl/powiatlancucki/',
+        permanent: true,
+      },
+      {
         source: '/nabor',
         destination: 'https://nabor.pcss.pl/lancut',
         permanent: true,
