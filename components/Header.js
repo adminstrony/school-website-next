@@ -50,36 +50,54 @@ export const Header = () => {
       {open && (
         <div className="navigation">
           <ul className="navigation__items">
-            <Link href="https://plan-lekcji.zs2lancut.pl/" passHref>
-              <p>Plan lekcji</p>
-            </Link>
-            <Link
-              href="https://uonetplus.vulcan.net.pl/powiatlancucki/"
-              passHref
-            >
-              <p>e-Dziennik</p>
-            </Link>
-            <Link href="/Aktualnosci/" passHref>
-              <p>Aktualności</p>
-            </Link>
-            <Link href="/Ogloszenia/" passHref>
-              <p>Ogłoszenia</p>
-            </Link>
-            <Link href="/EgzaminyMatura/" passHref>
-              <p>Egzaminy/Matura</p>
-            </Link>
-            <Link href="/Rekrutacja/" passHref>
-              <p>Rekrutacja</p>
-            </Link>
-            <Link href="/oSzkole/" passHref>
-              <p>O Szkole</p>
-            </Link>
-            <Link href="/Kierunki/" passHref>
-              <p>Kierunki kształcenia</p>
-            </Link>
-            <Link href="/Stowarzyszenie/" passHref>
-              <p>Stowarzyszenie</p>
-            </Link>
+            <p>
+              <Link href="https://plan-lekcji.zs2lancut.pl/" passHref>
+                Plan lekcji
+              </Link>
+            </p>
+            <p>
+              <Link
+                href="https://uonetplus.vulcan.net.pl/powiatlancucki/"
+                passHref
+              >
+                e-Dziennik
+              </Link>
+            </p>
+            <p>
+              <Link href="/Aktualnosci/" passHref>
+                Aktualności
+              </Link>
+            </p>
+            <p>
+              <Link href="/Ogloszenia/" passHref>
+                Ogłoszenia
+              </Link>
+            </p>
+            <p>
+              <Link href="/EgzaminyMatura/" passHref>
+                Egzaminy/Matura
+              </Link>
+            </p>
+            <p>
+              <Link href="/Rekrutacja/" passHref>
+                Rekrutacja
+              </Link>
+            </p>
+            <p>
+              <Link href="/oSzkole/" passHref>
+                O Szkole
+              </Link>
+            </p>
+            <p>
+              <Link href="/Kierunki/" passHref>
+                Kierunki kształcenia
+              </Link>
+            </p>
+            <p>
+              <Link href="/Stowarzyszenie/" passHref>
+                Stowarzyszenie
+              </Link>
+            </p>
             <Icons />
           </ul>
         </div>
