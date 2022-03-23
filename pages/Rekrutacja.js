@@ -9,11 +9,16 @@ const content = {
   description:
     'Śledź zakładkę rekrutacja, aby nie przegapić naboru oraz złożyć podanie. Czekamy na Ciebie!',
 }
+const nabor = {
+  title: 'Nabór 2022/2023',
+  description:
+    'Złóż wniosek o przyjęcie do naszej szkoły kożystając z elektronicznego systemu',
+}
 const page = ({ data: article }) => {
   return (
     <Layout title={content.title}>
       <div className="wrapper">
-        <News props={article} content={content} />
+        <News props={article} content={content} extra={nabor} />
       </div>
     </Layout>
   )
