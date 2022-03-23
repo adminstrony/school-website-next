@@ -26,8 +26,8 @@ export const Footer = () => {
             <br /> sekretariat@zs2lancut.pl
           </p>
           <p>
-          NIP
-            <br /> 815-12-76-419
+            Skrzynka ePUAP
+            <br /> /zs2lancut/SkrytkaESP
           </p>
         </div>
       </div>
