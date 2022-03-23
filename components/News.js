@@ -28,22 +28,24 @@ export const News = ({ props: { article }, content, extra }) => {
             </a>
           </Link>
         ))}
-        <Link href="/nabor">
-          <a className="miniature">
-            <Image
-              src="https://media.graphcms.com/iWmLezntSMaebk9KiLyu?_ga=2.18036665.1659313206.1647972502-1915148971.1646832649"
-              alt=""
-              width="370"
-              height="252"
-              objectFit="contain"
-            />
-            <h5>{extra.title}</h5>
-            <p>{extra.description.slice(0, 88).replace(/\\n/g, ' ')}</p>
-            <div className="arrow">
-              <Image src={arrow} alt="" />
-            </div>
-          </a>
-        </Link>
+        {extra && (
+          <Link href={extra.link}>
+            <a className="miniature">
+              <Image
+                src={extra.glowneZdjecie}
+                alt=""
+                width="370"
+                height="252"
+                objectFit="contain"
+              />
+              <h5>{extra.title}</h5>
+              <p>{extra.description.slice(0, 88).replace(/\\n/g, ' ')}</p>
+              <div className="arrow">
+                <Image src={arrow} alt="" />
+              </div>
+            </a>
+          </Link>
+        )}
       </div>
     </section>
   )

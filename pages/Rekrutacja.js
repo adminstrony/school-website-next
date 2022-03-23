@@ -10,7 +10,10 @@ const content = {
     'Śledź zakładkę rekrutacja, aby nie przegapić naboru oraz złożyć podanie. Czekamy na Ciebie!',
 }
 const nabor = {
+  link: '/nabor',
   title: 'Nabór 2022/2023',
+  glowneZdjecie:
+    'https://media.graphcms.com/iWmLezntSMaebk9KiLyu?_ga=2.18036665.1659313206.1647972502-1915148971.1646832649',
   description:
     'Złóż wniosek o przyjęcie do naszej szkoły kożystając z elektronicznego systemu',
 }
