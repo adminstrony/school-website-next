@@ -20,6 +20,11 @@ module.exports = {
         destination: 'https://nabor.pcss.pl/lancut',
         permanent: true,
       },
+      {
+        source: '/index.php/stowarzyszenie/aktualnosci',
+        destination: 'aktualnosci',
+        permanent: true,
+      },
     ]
   },
 }
