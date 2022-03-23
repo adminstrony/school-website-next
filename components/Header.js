@@ -11,7 +11,7 @@ export const Header = () => {
       <header className="header">
         <Link href="/" passHref>
           <button className="logo" aria-label="Home Page">
-            <Image src="/ZS2.svg" alt="" width="139" height="39" />
+            <Image src="/ZS2.svg" alt="" width="152.38" height="55.59" />
           </button>
         </Link>
         <nav className="nav">
@@ -22,14 +22,18 @@ export const Header = () => {
           <p>|</p>
           <Link href="/Aktualnosci">Aktualności</Link>
           <div className="aktualnosci-dropdown-menu">
-            <Link href="/Ogloszenia/">Ogłoszenia</Link>
+            <Link href="/Ogloszenia/" className="arrow-down">
+              Ogłoszenia
+            </Link>
           </div>
           <Link href="/EgzaminyMatura">Egzaminy/Matura</Link>
           <Link href="/Rekrutacja">Rekrutacja</Link>
           <div className="kierunki-dropdown-menu">
             <Link href="/Kierunki/">Kierunki kształcenia</Link>
           </div>
-          <Link href="/oSzkole">O Szkole</Link>
+          <Link href="/oSzkole" className="arrow-down">
+            O Szkole
+          </Link>
           <div className="stowarzyszenie-dropdown-menu">
             <Link href="/Stowarzyszenie/">Stowarzyszenie</Link>
           </div>

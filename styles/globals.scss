@@ -37,7 +37,7 @@ p {
 }
 
 .min {
-  min-height: calc(100vh - 347px);
+  min-height: calc(100vh - 312px);
 }
 
 .clicable {
@@ -555,5 +555,17 @@ footer {
 }
 
 .NotFoundPage {
-  min-height: calc(100vh - 297px);
+  text-align: center;
+  h2,
+  p {
+    margin-bottom: 20px;
+  }
+  font-size: 19px;
+  a {
+    color: #4e4a85;
+  }
 }
+
+// .arrow-down::after {
+//   content: url(../images/arrow-down);
+// }
