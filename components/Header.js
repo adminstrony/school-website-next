@@ -15,7 +15,7 @@ export const Header = () => {
           </button>
         </Link>
         <nav className="nav">
-          <Link href="https://plan-lekcji.vercel.app/">Plan lekcji</Link>
+          <Link href="https://plan-lekcji.zs2lancut.pl/">Plan lekcji</Link>
           <Link href="https://uonetplus.vulcan.net.pl/powiatlancucki/">
             e-Dziennik
           </Link>
@@ -46,7 +46,7 @@ export const Header = () => {
       {open && (
         <div className="navigation">
           <ul className="navigation__items">
-            <Link href="https://plan-lekcji.vercel.app/" passHref>
+            <Link href="https://plan-lekcji.zs2lancut.pl/" passHref>
               <p>Plan lekcji</p>
             </Link>
             <Link
