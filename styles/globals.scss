@@ -589,3 +589,41 @@ footer {
     color: #4e4a85;
   }
 }
+
+@media (max-width: 1600px) {
+  .year {
+    display: none;
+  }
+}
+.year {
+  position: absolute;
+  left: 0;
+
+  font-weight: 800;
+  text-align: right;
+  width: 150px;
+  font-size: 48px;
+  color: #4e4a85;
+}
+.year::after {
+  content: '';
+  position: absolute;
+  background-color: #4e4a85;
+  border-radius: 20px;
+  height: 3px;
+  left: 0;
+  width: 150px;
+  height: 4px;
+  transform: translateY(60px);
+}
+
+.year2020 {
+  transform: translateY(-2706px);
+}
+
+.year2021 {
+  transform: translateY(-3742px);
+}
+.year2022 {
+  transform: translateY(-7379px);
+}
