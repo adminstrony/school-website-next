@@ -11,7 +11,7 @@ const content = {
 }
 const page = ({ data: article }) => {
   return (
-    <Layout title={content.title}>
+    <Layout title={content.title} description={content.description}>
       <div className="wrapper">
         <News props={article} content={content} />
       </div>
