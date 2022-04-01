@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer.js'
 import { Accesibility } from '../components/Accesibility.js'
 
 const descriptionTemplate =
-  "'Z nami rozwiniesz swoje zainteresowania, posiądziesz wiedzę i umiejętności. Wszystko pod okiem najlepszych nauczycieli i wspaniałych kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.'"
+  'Z nami rozwiniesz swoje zainteresowania, posiądziesz wiedzę i umiejętności. Wszystko pod okiem najlepszych nauczycieli i wspaniałych kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.'
 
 const Layout = ({ children, title, description }) => {
   return (
