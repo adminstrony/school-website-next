@@ -30,7 +30,7 @@ export async function getStaticProps() {
   const data = await graphcms.request(`
     {
       article(
-      where: { kategoria_in: [Aktualnosci, Ogloszenia] }
+      where: { kategoria_in: [Aktualnosci] }
       orderBy: dataNapisaniaArtykulu_DESC
       first: 3
                     )
