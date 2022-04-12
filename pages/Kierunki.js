@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(
 const content = {
   title: 'Kierunki',
   description:
-    'Śledź zakładkę rekrutacja, aby nie przegapić naboru oraz złożyć podanie. Czekamy na Ciebie!',
+    'Nasza szkoła oferuje wszystkie ścieżki nauki wraz z najpopularniejszymi kierunkami i profilami dającymi realne zatrudnienie po szkole lub wymarzone studia.',
 }
 const page = ({ data: article }) => {
   return (
