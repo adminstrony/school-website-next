@@ -594,10 +594,11 @@ footer {
   .airtable-embed {
     margin-top: 50px;
     width: 100%;
-    height: 700px;
+    height: 770px;
     mask-border: 0;
     background: transparent;
-    border: 1px solid #ccc;
+    border: 0px;
+    border-radius: 25px;
   }
 }
 
