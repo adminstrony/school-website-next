@@ -16,7 +16,17 @@ const Article = ({ article }) => {
     >
       <article className="article wrapper">
         <h1>{article[0].title}</h1>
-        <a href={article[0].glowneZdjecie.url}>
+        {article[0].kategoria === 'Aktualnosci' ? (
+          <a href={article[0].glowneZdjecie.url}>
+            <Image
+              src={article[0].glowneZdjecie.url}
+              alt=""
+              width="900"
+              height="506,25"
+              objectFit="contain"
+            />
+          </a>
+        ) : (
           <Image
             src={article[0].glowneZdjecie.url}
             alt=""
@@ -24,7 +34,8 @@ const Article = ({ article }) => {
             height="506,25"
             objectFit="contain"
           />
-        </a>
+        )}
+
         <div
           className="article__content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -87,6 +98,7 @@ export async function getStaticProps({ params }) {
         where: { slug: $slug }
         ) {
         title
+        kategoria
         articletext {
           html
           text
