@@ -590,6 +590,15 @@ footer {
   a {
     color: #4e4a85;
   }
+
+  .airtable-embed {
+    margin-top: 50px;
+    width: 100%;
+    height: 700px;
+    mask-border: 0;
+    background: transparent;
+    border: 1px solid #ccc;
+  }
 }
 
 @media (max-width: 1600px) {
@@ -628,4 +637,17 @@ footer {
 }
 .year2022 {
   transform: translateY(-7379px);
+}
+
+.report {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  p {
+    padding: 0 25px;
+    @media (max-width: 1139px) {
+      display: none;
+    }
+  }
 }
