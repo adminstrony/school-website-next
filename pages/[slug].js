@@ -10,7 +10,10 @@ const Article = ({ article }) => {
   const router = useRouter()
   const html = article[0].articletext.html
   return (
-    <Layout title={article[0].title} description={article[0].articletext.text}>
+    <Layout
+      title={article[0].title}
+      description={article[0].articletext.text.replace(/\\n/g, ' ')}
+    >
       <article className="article wrapper">
         <h1>{article[0].title}</h1>
         <a href={article[0].glowneZdjecie.url}>
