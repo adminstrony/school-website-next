@@ -1,4 +1,4 @@
-import Layout from '../templates/Layout'
+import Layout from '../../templates/Layout'
 import Link from 'next/link'
 const Index = () => {
   return (
@@ -8,7 +8,7 @@ const Index = () => {
           href="https://archiwum2.zs2lancut.pl/index.php/o-nas/kalendarz-wydarzen"
           passHref
         >
-          <h1>Kalendarz Wydarzeń</h1>
+          Kalendarz Wydarzeń
         </Link>
       </div>
     </Layout>
