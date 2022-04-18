@@ -16,7 +16,7 @@ export const Footer = () => {
             href="https://www.google.com/maps/place/Zesp%C3%B3%C5%82+Szk%C3%B3%C5%82+nr+2+im.+J.+Kochanowskiego/@50.0914188,22.2312803,15z/data=!4m5!3m4!1s0x473cee970324f3a7:0x1d1b4a02738c9d6f!8m2!3d50.0914188!4d22.2312803"
             passHref
           >
-            <p className="clicable">
+            <p className="clickable">
               ul. Podzwierzyniec 41,
               <br /> 37-100 Łańcut
             </p>
@@ -33,12 +33,12 @@ export const Footer = () => {
       </div>
       <div className="icons-container footer-icons">
         <Link href="https://www.facebook.com/zs2lancut/" passHref>
-          <h2 className="icons clicable">
+          <h2 className="icons clickable">
             <SiFacebook />
           </h2>
         </Link>
         <Link href="https://www.instagram.com/zs2lancut/" passHref>
-          <h2 className="icons clicable">
+          <h2 className="icons clickable">
             <SiInstagram />
           </h2>
         </Link>
@@ -46,7 +46,7 @@ export const Footer = () => {
           href="https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos"
           passHref
         >
-          <h2 className="icons clicable">
+          <h2 className="icons clickable">
             <SiYoutube />
           </h2>
         </Link>

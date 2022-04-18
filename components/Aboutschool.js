@@ -17,7 +17,7 @@ export const Aboutschool = () => {
       <div className="about-school-profiles">
         {schoolprofiles.map((profile, i) => (
           <Link href={profile.path} key={i} passHref>
-            <div className="about-school-profile clicable">
+            <div className="about-school-profile clickable">
               <div className="about-school-profile-header">
                 <Image src={profile.image} alt="" width="50" height="50" />
                 <h3>{profile.name}</h3>
