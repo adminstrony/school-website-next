@@ -14,9 +14,6 @@ const page = ({ data: article }) => {
     <Layout title={content.title} description={content.description}>
       <div className="wrapper">
         <News props={article} content={content} />
-        <h1 className="year year2020">2020</h1>
-        <h1 className="year year2021">2021</h1>
-        <h1 className="year year2022">2022</h1>
       </div>
     </Layout>
   )
