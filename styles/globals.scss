@@ -233,7 +233,7 @@ a:hover + .kierunki-dropdown-menu {
 
   button {
     background-color: #3e7e82;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     color: white;
     border-radius: 30px;
 
@@ -262,7 +262,7 @@ a:hover + .kierunki-dropdown-menu {
     img {
       border-radius: 30px;
     }
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (max-width: 900px) {
     .img1 {
@@ -319,7 +319,7 @@ a:hover + .kierunki-dropdown-menu {
   padding: 40px 0;
   margin: 0 auto;
   background-color: #102247;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1251px) {
     border-radius: 30px;
   }
@@ -366,7 +366,7 @@ a:hover + .kierunki-dropdown-menu {
   padding: 30px 35px;
   border-radius: 30px;
   background-color: #0d1b39;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   h3 {
     font-weight: bold;
     font-size: 18px;
@@ -543,7 +543,7 @@ footer {
       line-height: 35px;
       display: -webkit-box;
     }
-    margin: 20px 0 20px;
+    margin: 20px 0;
     display: block;
     overflow: hidden;
   }
@@ -587,7 +587,7 @@ footer {
     height: 880px;
     mask-border: 0;
     background: transparent;
-    border: 0px;
+    border: 0;
     border-radius: 25px;
   }
 }
