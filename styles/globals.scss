@@ -597,6 +597,11 @@ footer {
   height: 60vh;
   border-style: none;
   border-radius: 10px;
+  max-width: 1250px;
+  @media (max-width: 960px) {
+    max-width: 100%;
+    min-height: 100vh;
+  }
 }
 
 //Years
