@@ -9,11 +9,20 @@ const content = {
   description:
     'Śledź na bieżąco zmiany w podziale godzin, dni wolne od zajęć oraz komunikaty dyrektora.',
 }
+
+const kalendarz = {
+  link: '/kalendarz-wydarzen',
+  title: 'Kalendarz wydarzeń 2021/2022  📅',
+  glowneZdjecie: '/kalendarz.png',
+  description:
+    'Kalendarz wydarzeń, dni wolnych przewidzianych na rok 2021/2022',
+}
+
 const page = ({ data: article }) => {
   return (
     <Layout title={content.title}>
       <div className="wrapper">
-        <News props={article} content={content} />
+        <News props={article} content={content} extrab={kalendarz} />
       </div>
     </Layout>
   )

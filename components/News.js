@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import arrow from '../public/icon-arrow.svg'
 
-export const News = ({ props: { article }, content, extra }) => {
+export const News = ({ props: { article }, content, extra, extrab }) => {
   return (
     <section className="news">
       <div className="news-text">
@@ -10,6 +10,24 @@ export const News = ({ props: { article }, content, extra }) => {
         <p>{content.description}</p>
       </div>
       <div className="newses">
+        {extrab && (
+          <Link href={extrab.link}>
+            <a className="miniature">
+              <Image
+                src={extrab.glowneZdjecie}
+                alt=""
+                width="370"
+                height="252"
+                objectFit="contain"
+              />
+              <h5>{extrab.title}</h5>
+              <p>{extrab.description.slice(0, 88).replace(/\\n/g, ' ')}</p>
+              <div className="arrow">
+                <Image src={arrow} alt="" />
+              </div>
+            </a>
+          </Link>
+        )}
         {article.map(({ slug, title, glowneZdjecie, articletext }, i) => (
           <Link href={slug} key={i}>
             <a key={i} className="miniature">
