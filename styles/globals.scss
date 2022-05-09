@@ -220,7 +220,6 @@ a:hover + .kierunki-dropdown-menu {
 
 .hero {
   max-width: 1300px;
-  margin: clamp(30px, 4vw, 50px) auto;
   padding: 0 25px 50px;
   margin: clamp(30px, 4vw, 50px) auto 0;
   display: flex;
@@ -233,7 +232,7 @@ a:hover + .kierunki-dropdown-menu {
 
   button {
     background-color: #3e7e82;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px 0 #00000040;
     color: white;
     border-radius: 30px;
 
@@ -319,7 +318,7 @@ a:hover + .kierunki-dropdown-menu {
   padding: 40px 0;
   margin: 0 auto;
   background-color: #102247;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px 0 #00000040);
   @media (min-width: 1251px) {
     border-radius: 30px;
   }
@@ -366,7 +365,7 @@ a:hover + .kierunki-dropdown-menu {
   padding: 30px 35px;
   border-radius: 30px;
   background-color: #0d1b39;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 #00000040;
   h3 {
     font-weight: bold;
     font-size: 18px;
@@ -543,7 +542,7 @@ footer {
       line-height: 35px;
       display: -webkit-box;
     }
-    margin: 20px 0;
+    margin: 20px 0 20px;
     display: block;
     overflow: hidden;
   }
@@ -587,7 +586,6 @@ footer {
     height: 880px;
     mask-border: 0;
     background: transparent;
-    border: 0;
     border-radius: 25px;
   }
 }
