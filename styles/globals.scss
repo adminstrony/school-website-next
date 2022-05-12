@@ -52,7 +52,7 @@ p {
 .wrapper {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0 16px;
 }
 
 .header {
@@ -220,7 +220,7 @@ a:hover + .kierunki-dropdown-menu {
 
 .hero {
   max-width: 1300px;
-  padding: 0 25px 50px;
+  padding: 0 16px 50px;
   margin: clamp(30px, 4vw, 50px) auto 0;
   display: flex;
   justify-content: space-between;
@@ -331,7 +331,7 @@ a:hover + .kierunki-dropdown-menu {
 .about-school-text {
   max-width: 555px;
   margin-bottom: 20px;
-  padding: 0 25px;
+  padding: 0 16px;
   h2 {
     font-weight: 900;
     font-size: 32px;
@@ -649,7 +649,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   p {
-    padding: 0 25px;
+    padding: 0 16px;
     @media (max-width: 1139px) {
       display: none;
     }
