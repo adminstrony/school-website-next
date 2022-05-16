@@ -14,7 +14,7 @@ const nabor = {
   title: 'Nabór 2022/2023',
   glowneZdjecie: '/nabor.webp',
   description:
-    'Złóż wniosek o przyjęcie do naszej szkoły kożystając z elektronicznego systemu',
+    'Złóż wniosek o przyjęcie do naszej szkoły korzystając z elektronicznego systemu',
 }
 const page = ({ data: article }) => {
   return (
