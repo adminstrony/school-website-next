@@ -78,7 +78,7 @@ export default Article
 export async function getStaticPaths() {
   const { article } = await graphcms.request(`
     {
-    article {
+    article(first: 1000) {
       slug
       }
     }
@@ -94,6 +94,7 @@ export async function getStaticProps({ params }) {
     `
     query ProductPageQuery($slug: String!){
       article(
+        first: 1000
         orderBy: dataNapisaniaArtykulu_DESC
         where: { slug: $slug }
         ) {
