@@ -258,6 +258,7 @@ a:hover + .kierunki-dropdown-menu {
   align-items: center;
   .img1,
   .img2 {
+    transition: 0.3s;
     img {
       border-radius: 30px;
     }
@@ -462,7 +463,8 @@ a:hover + .kierunki-dropdown-menu {
   }
 }
 
-.miniature:hover {
+.miniature:hover,
+.img1:hover {
   transform: scale(1.03);
   .arrow,
   h5,

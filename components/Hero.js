@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import HeroImage1 from '../public/HeroImage1.webp'
-import HeroImage2 from '../public/HeroImage2.webp'
-
 export const Hero = () => {
   return (
     <section className="hero">
@@ -22,10 +19,14 @@ export const Hero = () => {
       </section>
       <section className="hero-images">
         <div className="img1">
-          <Image src={HeroImage1} alt="" />
+          <Link href="/dzien-otwarty-27-maja-2022" passHref>
+            <a>
+              <Image src="/HeroImage1.webp" alt="" width="300" height="410" />
+            </a>
+          </Link>
         </div>
         <div className="img2">
-          <Image src={HeroImage2} alt="" />
+          <Image src="/HeroImage2.webp" alt="" width="300" height="410" />
         </div>
       </section>
     </section>
