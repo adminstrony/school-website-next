@@ -9,10 +9,12 @@ export const Header = () => {
   return (
     <>
       <header className="header">
-        <Link href="/" passHref>
-          <button className="logo" aria-label="Home Page">
-            <Image src="/ZS2.svg" alt="" width="152.38" height="55.59" />
-          </button>
+        <Link href="/" alt="Strona głowna">
+          <a>
+            <button className="logo" aria-label="Home Page">
+              <Image src="/ZS2.svg" alt="" width="152.38" height="55.59" />
+            </button>
+          </a>
         </Link>
         <nav className="nav">
           <Link href="/plan_lekcji">Plan lekcji</Link>
