@@ -19,11 +19,7 @@ export const Hero = () => {
       </section>
       <section className="hero-images">
         <div className="img1">
-          <Link href="/dzien-otwarty-27-maja-2022" passHref>
-            <a>
-              <Image src="/HeroImage1.webp" alt="" width="300" height="410" />
-            </a>
-          </Link>
+          <Image src="/HeroImage1.webp" alt="" width="300" height="410" />
         </div>
         <div className="img2">
           <Image src="/HeroImage2.webp" alt="" width="300" height="410" />
