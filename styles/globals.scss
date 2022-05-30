@@ -464,15 +464,14 @@ a:hover + .kierunki-dropdown-menu {
   }
 }
 
-// .miniature:hover,
-// .img1:hover {
-//   transform: scale(1.03);
-//   .arrow,
-//   h5,
-//   p {
-//     filter: brightness(1.1);
-//   }
-// }
+.miniature:hover {
+  transform: scale(1.03);
+  .arrow,
+  h5,
+  p {
+    filter: brightness(1.1);
+  }
+}
 
 .footer {
   margin-top: 50px;
@@ -566,6 +565,13 @@ a:hover + .kierunki-dropdown-menu {
     gap: 15px;
     flex-direction: column;
   }
+
+  @media (max-width: 960px) {
+    .article__image {
+      height: 300px;
+    }
+  }
+
   .article__photos-container {
     max-width: 900px;
     display: flex;
