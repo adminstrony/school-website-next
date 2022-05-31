@@ -12,8 +12,8 @@ const content = {
 
 const kalendarz = {
   link: '/kalendarz-wydarzen',
-  title: 'Kalendarz wydarzeń 2021/2022  📅',
-  glowneZdjecie: '/kalendarz.png',
+  title: 'Kalendarz wydarzeń 2021/2022 📅',
+  glowneZdjecie: '/kalendarz.webp',
   description:
     'Kalendarz wydarzeń, dni wolnych przewidzianych na rok 2021/2022',
 }

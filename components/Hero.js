@@ -21,7 +21,12 @@ export const Hero = () => {
         <div className="img2">
           <Link href="/technik-mechanik-lotniczy">
             <a>
-              <Image src="/HeroImage1.png" alt="" width="630" height="410" />
+              <Image
+                src="/HeroImage1.webp"
+                alt="Nowy kierunek - technik mechanik lotniczy"
+                width="630"
+                height="410"
+              />
             </a>
           </Link>
         </div>
