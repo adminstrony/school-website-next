@@ -18,11 +18,12 @@ export const Hero = () => {
         </Link>
       </section>
       <section className="hero-images">
-        <div className="img1">
-          <Image src="/HeroImage1.webp" alt="" width="300" height="410" />
-        </div>
         <div className="img2">
-          <Image src="/HeroImage2.webp" alt="" width="300" height="410" />
+          <Link href="/technik-mechanik-lotniczy">
+            <a>
+              <Image src="/HeroImage1.png" alt="" width="630" height="410" />
+            </a>
+          </Link>
         </div>
       </section>
     </section>

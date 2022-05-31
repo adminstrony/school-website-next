@@ -247,7 +247,7 @@ a:hover + .kierunki-dropdown-menu {
     background-color: #102247;
   }
   button:active {
-    filter: brightness(0.95);
+    filter: brightness(1.2);
   }
 }
 
@@ -388,7 +388,7 @@ a:hover + .kierunki-dropdown-menu {
 }
 
 .about-school-profile:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.1);
 }
 
 .about-school-profile-header {
@@ -464,7 +464,8 @@ a:hover + .kierunki-dropdown-menu {
   }
 }
 
-.miniature:hover {
+.miniature:hover,
+.img2:hover {
   transform: scale(1.03);
   .arrow,
   h5,
