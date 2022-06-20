@@ -35,7 +35,6 @@ const Article = ({ article }) => {
             objectFit="contain"
           />
         )}
-
         <div
           className="article__content"
           dangerouslySetInnerHTML={{ __html: html }}
