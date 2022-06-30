@@ -2,6 +2,8 @@ import { GraphQLClient } from 'graphql-request'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Layout from '../templates/Layout'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
+import { FacebookIcon, TwitterIcon } from 'react-share'
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
 )
@@ -39,27 +41,46 @@ const Article = ({ article }) => {
           className="article__content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <div className="files">
-          {article[0].pliki.map((pliki, i) => (
-            <a key={i} href={pliki.url}>
-              {pliki.fileName}
-            </a>
-          ))}
-        </div>
-        <div className="article__photos-container">
-          {article[0].zdjecia.map((img, i) => (
-            <a key={i} href={img.url}>
-              <Image
-                src={img.url}
-                alt=""
-                width="432"
-                height="243"
-                objectFit="contain"
-              />
-            </a>
-          ))}
-        </div>
+        {article[0].pliki[0] && (
+          <div className="files">
+            {article[0].pliki.map((pliki, i) => (
+              <a key={i} href={pliki.url}>
+                {pliki.fileName}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {article[0].zdjecia[0] && (
+          <div className="article__photos-container">
+            {article[0].zdjecia.map((img, i) => (
+              <a key={i} href={img.url}>
+                <Image
+                  src={img.url}
+                  alt=""
+                  width="432"
+                  height="243"
+                  objectFit="contain"
+                />
+              </a>
+            ))}
+          </div>
+        )}
+
         <div className="button-wrapper">
+          <div className="social-icons">
+            <FacebookShareButton
+              url={`https://zs2lancut.pl/${article[0].slug}`}
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton
+              title={article[0].title}
+              url={`https://zs2lancut.pl/${article[0].slug}`}
+            >
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+          </div>
           <button
             onClick={() => router.back()}
             className="article__button-Back"
@@ -97,6 +118,7 @@ export async function getStaticProps({ params }) {
         orderBy: dataNapisaniaArtykulu_DESC
         where: { slug: $slug }
         ) {
+        slug
         title
         kategoria
         articletext {
