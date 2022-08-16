@@ -15,13 +15,12 @@ const Article = ({ article }) => {
       description={article[0].articletext.text.replace(/\\n/g, ' ')}
     >
       <article className="article wrapper">
-        <h1>{article[0].title}</h1>
         {article[0].kategoria === 'Aktualnosci' ? (
           <a href={article[0].glowneZdjecie.url}>
             <Image
               src={article[0].glowneZdjecie.url}
               alt=""
-              width={900}
+              width={800}
               height={506}
               objectFit="contain"
             />
@@ -30,11 +29,12 @@ const Article = ({ article }) => {
           <Image
             src={article[0].glowneZdjecie.url}
             alt=""
-            width="900"
-            height="506,25"
+            width={800}
+            height={506}
             objectFit="contain"
           />
         )}
+        <h1>{article[0].title}</h1>
         <div
           className="article__content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -48,23 +48,6 @@ const Article = ({ article }) => {
             ))}
           </div>
         )}
-
-        {article[0].zdjecia[0] && (
-          <div className="article__photos-container">
-            {article[0].zdjecia.map((img, i) => (
-              <a key={i} href={img.url}>
-                <Image
-                  src={img.url}
-                  alt=""
-                  width="432"
-                  height="243"
-                  objectFit="contain"
-                />
-              </a>
-            ))}
-          </div>
-        )}
-
         <div className="button-wrapper">
           <button
             onClick={() => router.back()}
@@ -73,6 +56,31 @@ const Article = ({ article }) => {
             ← Wróć do bloga
           </button>
         </div>
+        {article[0].zdjecia[0] && (
+          <>
+            <div className="article__photos-container">
+              {article[0].zdjecia.map((img, i) => (
+                <a key={i} href={img.url}>
+                  <Image
+                    src={img.url}
+                    alt=""
+                    width={800}
+                    height={506}
+                    objectFit="contain"
+                  />
+                </a>
+              ))}
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() => router.back()}
+                className="article__button-Back"
+              >
+                ← Wróć do bloga
+              </button>
+            </div>
+          </>
+        )}
       </article>
     </Layout>
   )
