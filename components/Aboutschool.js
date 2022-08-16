@@ -16,17 +16,19 @@ export const Aboutschool = () => {
       </div>
       <div className="about-school-profiles">
         {schoolprofiles.map((profile, i) => (
-          <Link href={profile.path} key={i} passHref>
-            <div className="about-school-profile clickable">
-              <div className="about-school-profile-header">
-                <Image src={profile.image} alt="" width="50" height="50" />
-                <h3>{profile.name}</h3>
+          <Link href={profile.path} key={i}>
+            <a>
+              <div className="about-school-profile">
+                <div className="about-school-profile-header">
+                  <Image src={profile.image} alt="" width="50" height="50" />
+                  <h3>{profile.name}</h3>
+                </div>
+                <p>{profile.description}</p>
+                <div className="arrow">
+                  <Image src={arrow} alt="" />
+                </div>
               </div>
-              <p>{profile.description}</p>
-              <div className="arrow">
-                <Image src={arrow} alt="" />
-              </div>
-            </div>
+            </a>
           </Link>
         ))}
       </div>

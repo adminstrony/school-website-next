@@ -1,6 +1,4 @@
-import React from 'react'
 import Image from 'next/image'
-import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 import Link from 'next/link'
 
 export const Footer = () => {
@@ -33,26 +31,35 @@ export const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="icons-container footer-icons">
+        <div className="footer-icons">
           <Link href="https://www.facebook.com/zs2lancut/">
             <a>
-              <h2 className="icons clickable">
-                <SiFacebook />
-              </h2>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-facebook.svg"
+                alt="Szkolny Facebook"
+              />
             </a>
           </Link>
           <Link href="https://www.instagram.com/zs2lancut/">
             <a>
-              <h2 className="icons clickable">
-                <SiInstagram />
-              </h2>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-instagram.svg"
+                alt="Szkolny Instagram"
+              />
             </a>
           </Link>
           <Link href="https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos">
             <a>
-              <h2 className="icons clickable">
-                <SiYoutube />
-              </h2>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-youtube.svg"
+                alt="Szkolny Youtube"
+              />
             </a>
           </Link>
         </div>

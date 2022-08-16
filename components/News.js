@@ -18,7 +18,7 @@ export const News = ({ props: { article }, content, extra, extrab }) => {
                 alt=""
                 width="370"
                 height="252"
-                objectFit="contain"
+                object-fit="contain"
               />
               <h5>{extrab.title}</h5>
               <p>{extrab.description.slice(0, 88).replace(/\\n/g, ' ')}</p>

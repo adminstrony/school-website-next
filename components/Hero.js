@@ -13,8 +13,10 @@ export const Hero = () => {
           umiejętności. Wszystko pod okiem najlepszych nauczycieli i wspaniałych
           kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.
         </p>
-        <Link href="/Rekrutacja" passHref>
-          <button>Dołącz do nas</button>
+        <Link href="/Rekrutacja">
+          <a>
+            <button>Dołącz do nas</button>
+          </a>
         </Link>
       </section>
       <section className="hero-images">

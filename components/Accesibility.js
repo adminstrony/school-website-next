@@ -2,9 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const Accesibility = () => (
-  <button className="accessibility" aria-label="accessibility">
-    <Link href="/deklaracja-dostepnosci" passHref>
-      <Image src="/accessibility.svg" alt="" width="50" height="50" />
-    </Link>
-  </button>
+  <Link href="/deklaracja-dostepnosci" alt="Deklaracja dostepnosci">
+    <a>
+      <button className="accessibility" aria-label="accessibility">
+        <Image
+          src="/accessibility.svg"
+          alt="Deklaracja dostepnosci"
+          width={50}
+          height={50}
+        />
+      </button>
+    </a>
+  </Link>
 )

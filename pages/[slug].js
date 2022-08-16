@@ -2,8 +2,6 @@ import { GraphQLClient } from 'graphql-request'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Layout from '../templates/Layout'
-import { FacebookShareButton, TwitterShareButton } from 'react-share'
-import { FacebookIcon, TwitterIcon } from 'react-share'
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
 )
@@ -23,8 +21,8 @@ const Article = ({ article }) => {
             <Image
               src={article[0].glowneZdjecie.url}
               alt=""
-              width="900"
-              height="506,25"
+              width={900}
+              height={506}
               objectFit="contain"
             />
           </a>
@@ -68,19 +66,6 @@ const Article = ({ article }) => {
         )}
 
         <div className="button-wrapper">
-          <div className="social-icons">
-            <FacebookShareButton
-              url={`https://zs2lancut.pl/${article[0].slug}`}
-            >
-              <FacebookIcon size={32} round />
-            </FacebookShareButton>
-            <TwitterShareButton
-              title={article[0].title}
-              url={`https://zs2lancut.pl/${article[0].slug}`}
-            >
-              <TwitterIcon size={32} round />
-            </TwitterShareButton>
-          </div>
           <button
             onClick={() => router.back()}
             className="article__button-Back"
