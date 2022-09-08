@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   images: {
     domains: ['media.graphassets.com'],
   },
@@ -28,11 +33,6 @@ const nextConfig = {
         permanent: true,
       },
     ]
-  },
-  experimental: {
-    images: {
-      unoptimized: true,
-    },
   },
 }
 

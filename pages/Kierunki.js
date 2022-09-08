@@ -1,48 +1,49 @@
-import { GraphQLClient } from 'graphql-request'
-import Layout from '../templates/Layout'
-import { News } from '../components/News.js'
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
-)
-const content = {
-  title: 'Kierunki',
-  description:
-    'Nasza szkoła oferuje wszystkie ścieżki nauki wraz z najpopularniejszymi kierunkami i profilami dającymi realne zatrudnienie po szkole lub wymarzone studia.',
-}
-const page = ({ data: article }) => {
+import { gql } from '@apollo/client'
+import client from '../lib/apollo-client.js'
+import { Section } from '../templates/Section'
+const Kierunki = ({ articles }) => {
   return (
-    <Layout title={content.title}>
-      <div className="wrapper">
-        <News props={article} content={content} />
-      </div>
-    </Layout>
+    <Section
+      articles={articles}
+      span={sectionContent.span}
+      title={sectionContent.title}
+      description={sectionContent.description}
+      objectfit="cover"
+    />
   )
 }
 
-export default page
+export default Kierunki
 
-export async function getStaticProps() {
-  const data = await graphcms.request(`
-    {
-      article(
-      where: { kategoria_in: [Kierunki] }
-      orderBy: dataNapisaniaArtykulu_DESC
-                    )
-    {
-    title
-    slug
-    articletext {
-      text
-      }
-    glowneZdjecie {
-      url
+const sectionContent = {
+  span: 'Kierunki',
+  title: 'Sprawdź kierunki kształcenia',
+  description:
+    'Nasza szkoła oferuje wszystkie ścieżki nauki wraz z najpopularniejszymi kierunkami i profilami dającymi realne zatrudnienie po szkole lub wymarzone studia.',
+}
+
+export async function getServerSideProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Articles {
+        article(
+          where: { kategoria_in: [Kierunki] }
+          orderBy: dataNapisaniaArtykulu_DESC
+          first: 1000
+        ) {
+          title
+          slug
+          articletext {
+            text
+          }
+          glowneZdjecie {
+            url
+          }
         }
       }
-    }
-  `)
+    `,
+  })
   return {
-    props: {
-      data,
-    },
+    props: { articles: data.article },
   }
 }

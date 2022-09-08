@@ -10,6 +10,8 @@ export const Accesibility = () => (
           alt="Deklaracja dostepnosci"
           width={50}
           height={50}
+          quality={100}
+          priority
         />
       </button>
     </a>

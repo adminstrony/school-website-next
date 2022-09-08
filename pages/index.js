@@ -1,54 +1,58 @@
-import { GraphQLClient } from 'graphql-request'
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
-)
+import { Layout } from '../templates/Layout.js'
+import { Hero } from '../components/Hero'
 
-import { Hero } from '../components/Hero.js'
-import { Aboutschool } from '../components/Aboutschool.js'
-import { News } from '../components/News.js'
-import Layout from '../templates/Layout.js'
+import { SectionSchool, SectionArticle } from '../components/Sections'
 
-const content = {
-  title: 'Poznaj naszą szkołę',
-  description:
-    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego co robimy.',
-}
+import { gql } from '@apollo/client'
+import client from '../lib/apollo-client.js'
 
-export default function Home({ data: article }) {
+const index = ({ articles }) => {
   return (
-    <Layout title="Strona główna">
+    <Layout title="Strona Główna">
       <Hero />
-      <Aboutschool />
-      <div className="wrapper">
-        <News props={article} content={content} />
-      </div>
+      <SectionSchool />
+      <SectionArticle
+        articles={articles}
+        objectfit="cover"
+        span={sectionContent.span}
+        title={sectionContent.title}
+        description={sectionContent.description}
+      />
     </Layout>
   )
 }
 
-export async function getStaticProps() {
-  const data = await graphcms.request(`
-    {
-      article(
-      where: { kategoria_in: [Aktualnosci] }
-      orderBy: dataNapisaniaArtykulu_DESC
-      first: 3
-                    )
-    {
-    title
-    slug
-    articletext {
-      text
-      }
-    glowneZdjecie {
-      url
+export default index
+
+const sectionContent = {
+  span: 'Aktualności',
+  title: 'Zobacz co u nas dzieje!',
+  description:
+    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego co robimy. Rozwijamy nasze pasję i wygrywamy w konkursach.',
+}
+
+export async function getServerSideProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Articles {
+        article(
+          where: { kategoria_in: [Aktualnosci] }
+          orderBy: dataNapisaniaArtykulu_DESC
+          first: 3
+        ) {
+          title
+          slug
+          articletext {
+            text
+          }
+          glowneZdjecie {
+            url
+          }
         }
       }
-    }
-  `)
+    `,
+  })
   return {
-    props: {
-      data,
-    },
+    props: { articles: data.article },
   }
 }

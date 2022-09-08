@@ -1,86 +1,98 @@
 import { GraphQLClient } from 'graphql-request'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Layout from '../templates/Layout'
+import Link from 'next/link'
+import { Layout } from '../templates/Layout'
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
 )
 
+import { gql } from '@apollo/client'
+import client from '../lib/apollo-client.js'
+
 const Article = ({ article }) => {
+  const date = article.dataNapisaniaArtykulu.replaceAll('-', '/')
   const router = useRouter()
-  const html = article[0].articletext.html
+  const html = article.articletext.html
   return (
     <Layout
-      title={article[0].title}
-      description={article[0].articletext.text.replace(/\\n/g, ' ')}
+      title={article.title}
+      description={article.articletext.text.replace(/\\n/g, ' ')}
     >
-      <article className="article wrapper">
-        {article[0].kategoria === 'Aktualnosci' ? (
-          <a href={article[0].glowneZdjecie.url}>
-            <Image
-              src={article[0].glowneZdjecie.url}
-              alt=""
-              width={800}
-              height={506}
-              objectFit="contain"
-            />
-          </a>
-        ) : (
-          <Image
-            src={article[0].glowneZdjecie.url}
-            alt=""
-            width={800}
-            height={506}
-            objectFit="contain"
-          />
-        )}
-        <h1>{article[0].title}</h1>
-        <div
-          className="article__content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        {article[0].pliki[0] && (
-          <div className="files">
-            {article[0].pliki.map((pliki, i) => (
-              <a key={i} href={pliki.url}>
-                {pliki.fileName}
+      <article>
+        <div className="article-image-wrapper">
+          {article.kategoria === 'Aktualnosci' && (
+            <Link href={article.glowneZdjecie.url}>
+              <a>
+                <Image
+                  src={article.glowneZdjecie.url}
+                  alt=""
+                  width={710}
+                  height={525}
+                  quality={100}
+                  priority
+                  className="article-image"
+                />
               </a>
-            ))}
-          </div>
-        )}
-        <div className="button-wrapper">
-          <button
-            onClick={() => router.back()}
-            className="article__button-Back"
-          >
-            ← Wróć do bloga
-          </button>
+            </Link>
+          )}
         </div>
-        {article[0].zdjecia[0] && (
-          <>
-            <div className="article__photos-container">
-              {article[0].zdjecia.map((img, i) => (
-                <a key={i} href={img.url}>
-                  <Image
-                    src={img.url}
-                    alt=""
-                    width={800}
-                    height={506}
-                    objectFit="contain"
-                  />
+        <div className="article">
+          <div>
+            <span>{date}</span>
+            <h1>{article.title}</h1>
+          </div>
+
+          <div
+            className="article__content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          {article.pliki[0] && (
+            <div className="files">
+              {article.pliki.map((pliki, i) => (
+                <a key={i} href={pliki.url}>
+                  {pliki.fileName}
                 </a>
               ))}
             </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() => router.back()}
-                className="article__button-Back"
-              >
-                ← Wróć do bloga
-              </button>
-            </div>
-          </>
-        )}
+          )}
+          <div className="button-wrapper">
+            <button
+              onClick={() => router.back()}
+              className="article__button-Back"
+            >
+              ← Wróć do bloga
+            </button>
+          </div>
+          {article.zdjecia[0] && (
+            <>
+              <div className="article-photos-container">
+                <span>Galeria zdjęć:</span>
+                {article.zdjecia.map((img, i) => (
+                  <Link key={i} href={img.url}>
+                    <a>
+                      <Image
+                        src={img.url}
+                        alt=""
+                        width={710}
+                        height={525}
+                        quality={100}
+                      />
+                    </a>
+                  </Link>
+                ))}
+              </div>
+              <div className="button-wrapper">
+                <button
+                  onClick={() => router.back()}
+                  className="article__button-Back"
+                >
+                  ← Wróć do bloga
+                </button>
+              </div>
+            </>
+          )}
+        </div>
       </article>
     </Layout>
   )
@@ -89,13 +101,16 @@ const Article = ({ article }) => {
 export default Article
 
 export async function getStaticPaths() {
-  const { article } = await graphcms.request(`
-    {
-    article(first: 1000) {
-      slug
+  const { data } = await client.query({
+    query: gql`
+      {
+        article(first: 1000) {
+          slug
+        }
       }
-    }
-     `)
+    `,
+  })
+  const { article } = data
   const paths = article.map(({ slug }) => ({
     params: { slug },
   }))
@@ -112,6 +127,7 @@ export async function getStaticProps({ params }) {
         where: { slug: $slug }
         ) {
         slug
+        dataNapisaniaArtykulu
         title
         kategoria
         articletext {
@@ -137,7 +153,7 @@ export async function getStaticProps({ params }) {
   )
   return {
     props: {
-      article: article,
+      article: article[0],
     },
   }
 }

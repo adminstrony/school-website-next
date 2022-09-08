@@ -3,36 +3,35 @@ import Link from 'next/link'
 
 export const Hero = () => {
   return (
-    <section className="hero">
-      <section className="hero-text">
+    <section className="hero wrapper" id="hero">
+      <div className="hero-text ">
         <h1>
-          Jesteśmy <span>dumni</span> <br />z tego co robimy
+          Jesteśmy <span>dumni</span> z tego co robimy
         </h1>
         <p>
           Z nami rozwiniesz swoje zainteresowania, posiądziesz wiedzę i
           umiejętności. Wszystko pod okiem najlepszych nauczycieli i wspaniałych
           kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.
         </p>
-        <Link href="/Rekrutacja">
-          <a>
-            <button>Dołącz do nas</button>
-          </a>
-        </Link>
-      </section>
-      <section className="hero-images">
-        <div className="img2">
-          <Link href="/technik-mechanik-lotniczy">
-            <a>
-              <Image
-                src="/HeroImage1.webp"
-                alt="Nowy kierunek - technik mechanik lotniczy"
-                width="630"
-                height="410"
-              />
-            </a>
+        <div className="buttons">
+          <Link href="/Rekrutacja">
+            <button className="button-dark">Dołącz do nas!</button>
+          </Link>
+          <Link href="/Kierunki">
+            <button className="button-light">Sprawdź kierunki</button>
           </Link>
         </div>
-      </section>
+      </div>
+      <Image
+        src="/hero-image.webp"
+        width={738}
+        height={420}
+        alt=""
+        className="hero-image"
+        layout="fixed"
+        quality={100}
+        priority
+      />
     </section>
   )
 }

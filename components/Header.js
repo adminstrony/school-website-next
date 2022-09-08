@@ -1,68 +1,102 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
-import hamburger from '../public/burger.svg'
 import { useState } from 'react'
 
 export const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <>
-      <header className="header">
-        <Link href="/" alt="Strona głowna">
-          <a>
-            <button className="logo" aria-label="Home Page">
-              <Image src="/ZS2.svg" alt="" width={152} height={55} />
-            </button>
-          </a>
-        </Link>
-        <nav className="nav">
-          <Link href="/plan_lekcji">
-            <a>Plan lekcji</a>
+    <header className="header">
+      <Link href="/">
+        <a>
+          <Image
+            src="/Logo.svg"
+            alt="Logo szkoły"
+            width={323}
+            height={52}
+            className="logo"
+            layout="fixed"
+            quality={100}
+            priority
+          />
+        </a>
+      </Link>
+      <nav className="navbar">
+        <ul className="ul__desktop">
+          <Link href="/">
+            <a>
+              <p>Plan lekcji</p>
+            </a>
           </Link>
-          <Link href="/dziennik">
-            <a>e-Dziennik</a>
+          <Link href="/">
+            <a>
+              <p>e-Dziennik</p>
+            </a>
           </Link>
-          <p>|</p>
+          <p className="line">|</p>
           <Link href="/Aktualnosci">
-            <a>Aktualności</a>
+            <a>
+              <p>Aktualności</p>
+              <Image src="/arrow-down.svg" alt="" height="26" width="9" />
+            </a>
           </Link>
           <div className="aktualnosci-dropdown-menu">
-            <Link href="/Ogloszenia/" className="arrow-down">
-              Ogłoszenia
+            <Link href="/Ogloszenia">
+              <a>
+                <p>Ogłoszenia</p>
+              </a>
             </Link>
           </div>
           <Link href="/EgzaminyMatura">
-            <a>Egzaminy/Matura</a>
+            <a>
+              <p>Egzaminy/Matura</p>
+            </a>
           </Link>
           <Link href="/Rekrutacja">
-            <a>Rekrutacja</a>
+            <a>
+              <p>Rekrutacja</p>
+              {/* <Image src="/arrow-down.svg" alt="" height="26" width="9" /> */}
+            </a>
           </Link>
-          <div className="kierunki-dropdown-menu">
+          {/* <div className="kierunki-dropdown-menu">
             <Link href="/Kierunki/">
-              <a>Kierunki kształcenia</a>
+              <a>
+                <p>Kierunki kształcenia</p>
+              </a>
             </Link>
-          </div>
+          </div> */}
           <Link href="/oSzkole" className="arrow-down">
-            <a>O Szkole</a>
+            <a>
+              <p>O Szkole</p>
+              <Image src="/arrow-down.svg" alt="" height="26" width="9" />
+            </a>
           </Link>
           <div className="stowarzyszenie-dropdown-menu">
             <Link href="/Stowarzyszenie/">
-              <a>Stowarzyszenie</a>
+              <a>
+                <p>Stowarzyszenie</p>
+              </a>
             </Link>
           </div>
-        </nav>
+        </ul>
         <button
-          className="hamburger"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
+          className="hamburger"
         >
-          <Image src={hamburger} alt="" />
+          <Image
+            aria-hidden="true"
+            src="/hamburger.svg"
+            width={52}
+            height={52}
+            alt=""
+            quality={100}
+            priority
+          />
         </button>
-      </header>
-
+      </nav>
       {open && (
-        <div className="navigation">
-          <ul className="navigation__items">
+        <nav className="navigation-mobile">
+          <ul className="navigation-mobile-items">
             <p>
               <Link href="/plan_lekcji">
                 <a>Plan lekcji</a>
@@ -99,56 +133,57 @@ export const Header = () => {
               </Link>
             </p>
             <p>
-              <Link href="/Kierunki/">
-                <a>Kierunki kształcenia</a>
-              </Link>
-            </p>
-            <p>
               <Link href="/Stowarzyszenie/">
                 <a>Stowarzyszenie</a>
               </Link>
             </p>
-            <Icons />
           </ul>
-        </div>
+        </nav>
       )}
-    </>
+    </header>
   )
 }
 
-const Icons = () => {
-  return (
-    <div className="icons-container">
-      <Link href="https://www.facebook.com/zs2lancut/">
-        <a>
-          <Image
-            width={32}
-            height={32}
-            src="/icon-facebook.svg"
-            alt="Szkolny Facebook"
-          />
-        </a>
-      </Link>
-      <Link href="https://www.instagram.com/zs2lancut/">
-        <a>
-          <Image
-            width={32}
-            height={32}
-            src="/icon-instagram.svg"
-            alt="Szkolny Instagram"
-          />
-        </a>
-      </Link>
-      <Link href="https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos">
-        <a>
-          <Image
-            width={32}
-            height={32}
-            src="/icon-youtube.svg"
-            alt="Szkolny Youtube"
-          />
-        </a>
-      </Link>
-    </div>
-  )
-}
+// const NavIcon = () => {
+//   const icons = [
+//     {
+//       name: 'Facebook',
+//       path: '/icon-Facebook.svg',
+//       width: '10',
+//       height: '20',
+//       href: 'https://www.facebook.com/zs2lancut/',
+//     },
+//     {
+//       name: 'Youtube',
+//       path: '/icon-Youtube.svg',
+//       width: '17',
+//       height: '12',
+//       href: 'https://www.instagram.com/zs2lancut/',
+//     },
+//     {
+//       name: 'Instagram',
+//       path: '/icon-Instagram.svg',
+//       width: '18',
+//       height: '18',
+//       href: 'https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos',
+//     },
+//   ]
+//   return (
+//     <nav className="icons">
+//       {icons.map(({ name, path, width, height, href }) => (
+//         <Link href={href} key={name}>
+//           <a>
+//             <div className="icon">
+//               <Image
+//                 src={path}
+//                 alt={'Oficjalny' + name + 'naszej szkoły'}
+//                 width={width}
+//                 height={height}
+//               />
+//             </div>
+//           </a>
+//         </Link>
+//       ))}
+//     </nav>
+//   )
+// }

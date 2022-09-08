@@ -1,57 +1,49 @@
-import { GraphQLClient } from 'graphql-request'
-import Layout from '../templates/Layout'
-import { News } from '../components/News.js'
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
-)
-const content = {
-  title: 'Ogłoszenia',
+import { gql } from '@apollo/client'
+import client from '../lib/apollo-client.js'
+import { Section } from '../templates/Section'
+const Ogloszenia = ({ articles }) => {
+  return (
+    <Section
+      articles={articles}
+      span={sectionContent.span}
+      title={sectionContent.title}
+      description={sectionContent.description}
+      objectfit="contain"
+    />
+  )
+}
+
+export default Ogloszenia
+
+const sectionContent = {
+  span: 'Ogloszenia',
+  title: 'Sprawdzaj komunikaty',
   description:
     'Śledź na bieżąco zmiany w podziale godzin, dni wolne od zajęć oraz komunikaty dyrektora.',
 }
 
-// const kalendarz = {
-//   link: '/kalendarz-wydarzen',
-//   title: 'Kalendarz wydarzeń 2021/2022 📅',
-//   glowneZdjecie: '/kalendarz.webp',
-//   description:
-//     'Kalendarz wydarzeń, dni wolnych przewidzianych na rok 2021/2022',
-// }
-
-const page = ({ data: article }) => {
-  return (
-    <Layout title={content.title}>
-      <div className="wrapper">
-        <News props={article} content={content} />
-      </div>
-    </Layout>
-  )
-}
-
-export default page
-
-export async function getStaticProps() {
-  const data = await graphcms.request(`
-    {
-      article(
-      where: { kategoria_in: [Ogloszenia] }
-      orderBy: dataNapisaniaArtykulu_DESC
-                    )
-    {
-    title
-    slug
-    articletext {
-      text
-      }
-    glowneZdjecie {
-      url
+export async function getServerSideProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Articles {
+        article(
+          where: { kategoria_in: [Ogloszenia] }
+          orderBy: dataNapisaniaArtykulu_DESC
+          first: 1000
+        ) {
+          title
+          slug
+          articletext {
+            text
+          }
+          glowneZdjecie {
+            url
+          }
         }
       }
-    }
-  `)
+    `,
+  })
   return {
-    props: {
-      data,
-    },
+    props: { articles: data.article },
   }
 }

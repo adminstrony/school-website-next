@@ -1,48 +1,49 @@
-import { GraphQLClient } from 'graphql-request'
-import Layout from '../templates/Layout'
-import { News } from '../components/News.js'
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/ckw9gxfvl1igz01z27s9343r9/master'
-)
-const content = {
-  title: 'Egzaminy/Matura',
-  description:
-    'Dowiedz się jak przygotować się do egzaminów zawodowych oraz matury dzięki naszym artykułom.',
-}
-const page = ({ data: article }) => {
+import { gql } from '@apollo/client'
+import client from '../lib/apollo-client.js'
+import { Section } from '../templates/Section'
+const EgzaminyMatura = ({ articles }) => {
   return (
-    <Layout title={content.title}>
-      <div className="wrapper">
-        <News props={article} content={content} />
-      </div>
-    </Layout>
+    <Section
+      articles={articles}
+      span={sectionContent.span}
+      title={sectionContent.title}
+      description={sectionContent.description}
+      objectfit="contain"
+    />
   )
 }
 
-export default page
+export default EgzaminyMatura
 
-export async function getStaticProps() {
-  const data = await graphcms.request(`
-    {
-      article(
-      where: { kategoria_in: [EgzaminyMatura] }
-      orderBy: dataNapisaniaArtykulu_DESC
-                    )
-    {
-    title
-    slug
-    articletext {
-      text
-      }
-    glowneZdjecie {
-      url
+const sectionContent = {
+  span: 'Egzaminy/Matura',
+  title: 'Egzaminy oraz Matura 2023',
+  description:
+    'Dowiedz się jak przygotować się do egzaminów zawodowych oraz matury dzięki naszym artykułom.',
+}
+
+export async function getServerSideProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Articles {
+        article(
+          where: { kategoria_in: [EgzaminyMatura] }
+          orderBy: dataNapisaniaArtykulu_DESC
+          first: 1000
+        ) {
+          title
+          slug
+          articletext {
+            text
+          }
+          glowneZdjecie {
+            url
+          }
         }
       }
-    }
-  `)
+    `,
+  })
   return {
-    props: {
-      data,
-    },
+    props: { articles: data.article },
   }
 }
