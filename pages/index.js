@@ -28,7 +28,7 @@ const sectionContent = {
   span: 'Aktualności',
   title: 'Zobacz co u nas dzieje!',
   description:
-    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego co robimy. Rozwijamy nasze pasję i wygrywamy w konkursach.',
+    'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego, co robimy. Rozwijamy nasze pasję i wygrywamy w konkursach.',
 }
 
 export async function getServerSideProps() {
