@@ -22,12 +22,12 @@ export const Header = () => {
       </Link>
       <nav className="navbar">
         <ul className="ul__desktop">
-          <Link href="/">
+          <Link href="https://plan-lekcji.zs2lancut.pl/">
             <a>
               <p>Plan lekcji</p>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/dziennik">
             <a>
               <p>e-Dziennik</p>
             </a>
