@@ -26,7 +26,7 @@ export default index
 
 const sectionContent = {
   span: 'Aktualności',
-  title: 'Zobacz co u nas dzieje!',
+  title: 'Zobacz co u nas się dzieje!',
   description:
     'Żyjemy wszystkimi momentami naszej szkoły. Cenimy osiągnięcia i jesteśmy dumni z tego, co robimy. Rozwijamy nasze pasję i wygrywamy w konkursach.',
 }
