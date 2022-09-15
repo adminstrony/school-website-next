@@ -8,7 +8,7 @@ import client from '../lib/apollo-client.js'
 
 const index = ({ articles }) => {
   return (
-    <Layout title="Strona Główna">
+    <Layout title="Strona główna">
       <Hero />
       <SectionSchool />
       <SectionArticle
