@@ -149,12 +149,12 @@ button {
   }
 
   .navbar {
-    @media (min-width: 1268px) {
+    @media (min-width: 1313px) {
       transform: translateX(12.5px);
     }
 
     .ul__desktop {
-      @media (max-width: 1267px) {
+      @media (max-width: 1312px) {
         display: none;
       }
       padding: 0;
@@ -216,7 +216,7 @@ button {
 }
 
 .hamburger {
-  @media (min-width: 1268px) {
+  @media (min-width: 1313px) {
     display: none;
   }
   width: 52px;
@@ -322,6 +322,7 @@ a:hover + .stowarzyszenie-dropdown-menu {
     }
     @media (max-width: 935px) {
       flex-direction: column;
+      align-content: center;
     }
     .profile-link {
       max-width: 352px;
@@ -683,7 +684,7 @@ a:hover + .stowarzyszenie-dropdown-menu {
     }
   }
   .footer-icons {
-    transform: translateY(10px);
+    transform: translateY(-5px);
     display: flex;
     flex-direction: column;
     gap: 4px;

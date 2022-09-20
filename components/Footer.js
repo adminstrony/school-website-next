@@ -64,6 +64,16 @@ export const Footer = () => {
                 />
               </a>
             </Link>
+            <Link href="https://www.tiktok.com/@zs2lancut">
+              <a>
+                <Image
+                  width={21}
+                  height={21}
+                  src="/icon-tiktok.svg"
+                  alt="Szkolny Tiktok"
+                />
+              </a>
+            </Link>
           </div>
         </div>
       </div>

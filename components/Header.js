@@ -105,32 +105,37 @@ export const Header = () => {
               </Link>
             </p>
             <p>
-              <Link href="/Aktualnosci/">
+              <Link href="/Aktualnosci">
                 <a>Aktualności</a>
               </Link>
             </p>
             <p>
-              <Link href="/Ogloszenia/">
+              <Link href="/Ogloszenia">
                 <a>Ogłoszenia</a>
               </Link>
             </p>
             <p>
-              <Link href="/EgzaminyMatura/">
+              <Link href="/EgzaminyMatura">
                 <a>Egzaminy/Matura</a>
               </Link>
             </p>
             <p>
-              <Link href="/Rekrutacja/">
+              <Link href="/Rekrutacja">
                 <a>Rekrutacja</a>
               </Link>
             </p>
             <p>
-              <Link href="/Szkola/">
-                <a>O Szkole</a>
+              <Link href="/studia-dyplomowane-dla-nauczycieli">
+                <a>Studia podyplomowe</a>
               </Link>
             </p>
             <p>
-              <Link href="/Stowarzyszenie/">
+              <Link href="/Szkola">
+                <a>Szkoła</a>
+              </Link>
+            </p>
+            <p>
+              <Link href="/Stowarzyszenie">
                 <a>Stowarzyszenie</a>
               </Link>
             </p>
