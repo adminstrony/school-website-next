@@ -149,12 +149,12 @@ button {
   }
 
   .navbar {
-    @media (min-width: 1275px) {
+    @media (min-width: 1268px) {
       transform: translateX(12.5px);
     }
 
     .ul__desktop {
-      @media (max-width: 1275px) {
+      @media (max-width: 1267px) {
         display: none;
       }
       padding: 0;
@@ -163,7 +163,7 @@ button {
     }
     a {
       position: relative;
-      padding: 10px 12.5px;
+      padding: 10px 12px;
       display: flex;
       gap: 4px;
     }
@@ -186,7 +186,7 @@ button {
       font-weight: 400;
       font-size: 20px;
       line-height: 130%;
-      letter-spacing: -0.01px;
+      letter-spacing: -0.02em;
       font-feature-settings: 'salt' on;
       word-break: keep-all;
     }
@@ -194,7 +194,8 @@ button {
 }
 
 .line {
-  padding: 5px 12.5px;
+  padding: 5px 12px;
+  transform: translatey(5px);
 }
 
 .icons {
@@ -215,7 +216,7 @@ button {
 }
 
 .hamburger {
-  @media (min-width: 1276px) {
+  @media (min-width: 1268px) {
     display: none;
   }
   width: 52px;
@@ -261,9 +262,10 @@ a:hover + .aktualnosci-dropdown-menu {
   display: block;
 }
 .aktualnosci-dropdown-menu {
+  z-index: 5;
   position: absolute;
   margin-top: 40px;
-  margin-left: 285px;
+  margin-left: 273px;
   display: none;
 
   a {
@@ -281,25 +283,9 @@ a:hover + .stowarzyszenie-dropdown-menu {
   position: absolute;
   margin-top: 40px;
   width: 100%;
-  justify-content: flex-end;
   display: none;
-
-  a {
-    background-color: white;
-  }
-}
-
-a:hover + .kierunki-dropdown-menu {
-  display: flex;
-}
-.kierunki-dropdown-menu:hover {
-  display: flex;
-}
-.kierunki-dropdown-menu {
-  position: absolute;
-  margin-top: 40px;
-  margin-left: 580px;
-  display: none;
+  flex-direction: column;
+  align-items: flex-end;
 
   a {
     background-color: white;
@@ -603,7 +589,7 @@ a:hover + .kierunki-dropdown-menu {
     line-height: 180%;
     letter-spacing: -0.02em;
   }
-  display: flex;
+  display: block;
   overflow: hidden;
   gap: 15px;
   flex-direction: column;

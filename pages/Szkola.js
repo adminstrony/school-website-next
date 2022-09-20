@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 import client from '../lib/apollo-client.js'
 import { Section } from '../templates/Section'
-const oSzkole = ({ articles }) => {
+const Szkola = ({ articles }) => {
   return (
     <Section
       articles={articles}
@@ -13,10 +13,10 @@ const oSzkole = ({ articles }) => {
   )
 }
 
-export default oSzkole
+export default Szkola
 
 const sectionContent = {
-  span: 'oSzkole',
+  span: 'Szkola',
   title: 'Informacje o zespole szkół',
   description:
     'Znajdziesz tu przydatne informacje, duplikaty dokumentów oraz ważne wnioski min. refundacje, mLegitymacje czy przetargi.',
@@ -27,7 +27,7 @@ export async function getServerSideProps() {
     query: gql`
       query Articles {
         article(
-          where: { kategoria_in: [oSzkole] }
+          where: { kategoria_in: [Szkola] }
           orderBy: dataNapisaniaArtykulu_DESC
           first: 1000
         ) {

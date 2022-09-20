@@ -51,27 +51,24 @@ export const Header = () => {
               <p>Egzaminy/Matura</p>
             </a>
           </Link>
-          <Link href="/Rekrutacja">
+          <Link href="/studia-dyplomowane-dla-nauczycieli">
             <a>
-              <p>Rekrutacja</p>
-              {/* <Image src="/arrow-down.svg" alt="" height="26" width="9" /> */}
+              <p>Studia podyplomowe</p>
             </a>
           </Link>
-          {/* <div className="kierunki-dropdown-menu">
-            <Link href="/Kierunki/">
-              <a>
-                <p>Kierunki kształcenia</p>
-              </a>
-            </Link>
-          </div> */}
-          <Link href="/oSzkole" className="arrow-down">
+          <Link href="/Szkola" className="arrow-down">
             <a>
-              <p>O Szkole</p>
+              <p>Szkoła</p>
               <Image src="/arrow-down.svg" alt="" height="26" width="9" />
             </a>
           </Link>
           <div className="stowarzyszenie-dropdown-menu">
-            <Link href="/Stowarzyszenie/">
+            <Link href="/Rekrutacja">
+              <a>
+                <p>Rekrutacja</p>
+              </a>
+            </Link>
+            <Link href="/Stowarzyszenie">
               <a>
                 <p>Stowarzyszenie</p>
               </a>
@@ -128,7 +125,7 @@ export const Header = () => {
               </Link>
             </p>
             <p>
-              <Link href="/oSzkole/">
+              <Link href="/Szkola/">
                 <a>O Szkole</a>
               </Link>
             </p>
