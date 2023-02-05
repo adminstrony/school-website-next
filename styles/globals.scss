@@ -636,6 +636,20 @@ a:hover + .stowarzyszenie-dropdown-menu {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  a {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: -0.02em;
+    text-decoration-line: underline;
+    background: $purple-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  a:after {
+    content: '↗';
+  }
 }
 // Footer
 
