@@ -11,7 +11,7 @@ export const Layout = ({ children, title, description }) => {
     <>
       <Head>
         <title>
-          {title} | Zespół Szkoł Nr 2 im. Jana Kochanowskiego w Łańcucie
+          {`${title} | Zespół Szkoł Nr 2 im. Jana Kochanowskiego w Łańcucie`}
         </title>
         <meta
           name="description"

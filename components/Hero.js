@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 
 export const Hero = () => {
@@ -14,10 +14,10 @@ export const Hero = () => {
           kolegów, którzy zawsze Ci doradzą oraz pomogą z każdym problemem.
         </p>
         <div className="buttons">
-          <Link href="/Rekrutacja">
+          <Link href="/Rekrutacja" legacyBehavior>
             <button className="button-dark">Dołącz do nas!</button>
           </Link>
-          <Link href="/Kierunki">
+          <Link href="/Kierunki" legacyBehavior>
             <button className="button-light">Sprawdź kierunki</button>
           </Link>
         </div>

@@ -1,6 +1,5 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "zs2lancut-website",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,16 +8,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.9",
-    "graphql": "^16.5.0",
-    "graphql-request": "^5.0.0",
-    "next": "12.2.4",
+    "@apollo/client": "^3.7.7",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
+    "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.54.0"
+    "sass": "^1.58.0"
   },
   "devDependencies": {
-    "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3"
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6"
   }
 }

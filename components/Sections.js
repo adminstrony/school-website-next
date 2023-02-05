@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 import { ArticleCards } from './ArticleCard'
 
@@ -21,23 +21,17 @@ export const SectionSchool = () => {
       </div>
       <div className="links-container">
         {schoolprofiles.map((profile) => (
-          <Link href={profile.path} key={profile.path}>
-            <a className="profile-link">
-              <div className="profile-link-header">
-                <Image src={profile.image} alt="" width="50" height="50" />
-                <h3>{profile.name}</h3>
+          <Link href={profile.path} key={profile.path} className="profile-link">
+            <div className="profile-link-header">
+              <Image src={profile.image} alt="" width="50" height="50" />
+              <h3>{profile.name}</h3>
+            </div>
+            <p>{profile.description}</p>
+            <div className="arrow-container">
+              <div className="arrow">
+                <Image src="/arrow.svg" alt="" width={32} height={32} />
               </div>
-              <p>{profile.description}</p>
-              <div className="arrow-container">
-                <Image
-                  src="/arrow.svg"
-                  alt=""
-                  width={32}
-                  height={32}
-                  className="arrow"
-                />
-              </div>
-            </a>
+            </div>
           </Link>
         ))}
       </div>
@@ -55,7 +49,6 @@ export const SectionArticle = ({
 }) => {
   return (
     <section className="section-article">
-      <h1></h1>
       <div className="section-header">
         <div className="section-header-title">
           <span>{span}</span>

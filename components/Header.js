@@ -1,191 +1,112 @@
-import Image from 'next/future/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <header className="header">
-      <Link href="/">
-        <a>
+    <>
+      <header className="header">
+        <Link href="/">
           <Image
             src="/Logo.svg"
             alt="Logo szkoły"
             width={323}
             height={52}
             className="logo"
-            layout="fixed"
             quality={100}
             priority
           />
-        </a>
-      </Link>
-      <nav className="navbar">
-        <ul className="ul__desktop">
-          <Link href="https://plan-lekcji.zs2lancut.pl/">
-            <a>
+        </Link>
+        <nav className="navbar">
+          <ul className="ul__desktop">
+            <Link href="https://plan-lekcji.zs2lancut.pl/">
               <p>Plan lekcji</p>
-            </a>
-          </Link>
-          <Link href="/dziennik">
-            <a>
+            </Link>
+            <Link href="/dziennik">
               <p>e-Dziennik</p>
-            </a>
-          </Link>
-          <p className="line">|</p>
-          <Link href="/Aktualnosci">
-            <a>
+            </Link>
+            <p className="line">|</p>
+            <Link href="/Aktualnosci">
               <p>Aktualności</p>
               <Image src="/arrow-down.svg" alt="" height="26" width="9" />
-            </a>
-          </Link>
-          <div className="aktualnosci-dropdown-menu">
-            <Link href="/Ogloszenia">
-              <a>
-                <p>Ogłoszenia</p>
-              </a>
             </Link>
-          </div>
-          <Link href="/EgzaminyMatura">
-            <a>
+            <div className="aktualnosci-dropdown-menu">
+              <Link href="/Ogloszenia">
+                <p>Ogłoszenia</p>
+              </Link>
+            </div>
+            <Link href="/EgzaminyMatura">
               <p>Egzaminy/Matura</p>
-            </a>
-          </Link>
-          <Link href="/studia-dyplomowane-dla-nauczycieli">
-            <a>
+            </Link>
+            <Link href="/studia-dyplomowane-dla-nauczycieli">
               <p>Studia podyplomowe</p>
-            </a>
-          </Link>
-          <Link href="/Szkola" className="arrow-down">
-            <a>
+            </Link>
+            <Link href="/Szkola" className="arrow-down">
               <p>Szkoła</p>
               <Image src="/arrow-down.svg" alt="" height="26" width="9" />
-            </a>
-          </Link>
-          <div className="stowarzyszenie-dropdown-menu">
-            <Link href="/Rekrutacja">
-              <a>
+            </Link>
+            <div className="stowarzyszenie-dropdown-menu">
+              <Link href="/Rekrutacja">
                 <p>Rekrutacja</p>
-              </a>
-            </Link>
-            <Link href="/Stowarzyszenie">
-              <a>
+              </Link>
+              <Link href="/Stowarzyszenie">
                 <p>Stowarzyszenie</p>
-              </a>
-            </Link>
-          </div>
-        </ul>
-        <button
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-          className="hamburger"
-        >
-          <Image
-            aria-hidden="true"
-            src="/hamburger.svg"
-            width={52}
-            height={52}
-            alt=""
-            quality={100}
-            priority
-          />
-        </button>
-      </nav>
+              </Link>
+            </div>
+          </ul>
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+            className="hamburger"
+          >
+            <Image
+              aria-hidden="true"
+              src="/hamburger.svg"
+              width={52}
+              height={52}
+              alt=""
+              quality={100}
+              priority
+            />
+          </button>
+        </nav>
+      </header>
       {open && (
         <nav className="navigation-mobile">
           <ul className="navigation-mobile-items">
             <p>
-              <Link href="/plan_lekcji">
-                <a>Plan lekcji</a>
-              </Link>
+              <Link href="/plan_lekcji">Plan lekcji</Link>
             </p>
             <p>
-              <Link href="/dziennik">
-                <a>e-Dziennik</a>
-              </Link>
+              <Link href="/dziennik">e-Dziennik</Link>
             </p>
             <p>
-              <Link href="/Aktualnosci">
-                <a>Aktualności</a>
-              </Link>
+              <Link href="/Aktualnosci">Aktualności</Link>
             </p>
             <p>
-              <Link href="/Ogloszenia">
-                <a>Ogłoszenia</a>
-              </Link>
+              <Link href="/Ogloszenia">Ogłoszenia</Link>
             </p>
             <p>
-              <Link href="/EgzaminyMatura">
-                <a>Egzaminy/Matura</a>
-              </Link>
+              <Link href="/EgzaminyMatura">Egzaminy/Matura</Link>
             </p>
             <p>
-              <Link href="/Rekrutacja">
-                <a>Rekrutacja</a>
-              </Link>
+              <Link href="/Rekrutacja">Rekrutacja</Link>
             </p>
             <p>
               <Link href="/studia-dyplomowane-dla-nauczycieli">
-                <a>Studia podyplomowe</a>
+                Studia podyplomowe
               </Link>
             </p>
             <p>
-              <Link href="/Szkola">
-                <a>Szkoła</a>
-              </Link>
+              <Link href="/Szkola">Szkoła</Link>
             </p>
             <p>
-              <Link href="/Stowarzyszenie">
-                <a>Stowarzyszenie</a>
-              </Link>
+              <Link href="/Stowarzyszenie">Stowarzyszenie</Link>
             </p>
           </ul>
         </nav>
       )}
-    </header>
+    </>
   )
 }
-
-// const NavIcon = () => {
-//   const icons = [
-//     {
-//       name: 'Facebook',
-//       path: '/icon-Facebook.svg',
-//       width: '10',
-//       height: '20',
-//       href: 'https://www.facebook.com/zs2lancut/',
-//     },
-//     {
-//       name: 'Youtube',
-//       path: '/icon-Youtube.svg',
-//       width: '17',
-//       height: '12',
-//       href: 'https://www.instagram.com/zs2lancut/',
-//     },
-//     {
-//       name: 'Instagram',
-//       path: '/icon-Instagram.svg',
-//       width: '18',
-//       height: '18',
-//       href: 'https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos',
-//     },
-//   ]
-//   return (
-//     <nav className="icons">
-//       {icons.map(({ name, path, width, height, href }) => (
-//         <Link href={href} key={name}>
-//           <a>
-//             <div className="icon">
-//               <Image
-//                 src={path}
-//                 alt={'Oficjalny' + name + 'naszej szkoły'}
-//                 width={width}
-//                 height={height}
-//               />
-//             </div>
-//           </a>
-//         </Link>
-//       ))}
-//     </nav>
-//   )
-// }

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 
 export const Footer = () => {
@@ -7,20 +7,16 @@ export const Footer = () => {
       <div>
         <div className="footer-container">
           <Link href="/" alt="Strona głowna">
-            <a>
-              <Image src="/footer-logo.webp" alt="" width={108} height={108} />
-            </a>
+            <Image src="/footer-logo.webp" alt="" width={108} height={108} />
           </Link>
           <div>
             <h3>Zespół Szkół nr 2 im. Jana Kochanowskiego w Łańcucie</h3>
             <div className="footer-description">
               <Link href={LinkMap}>
-                <a>
-                  <p>
-                    ul. Podzwierzyniec 41,
-                    <br /> 37-100 Łańcut
-                  </p>
-                </a>
+                <p>
+                  ul. Podzwierzyniec 41,
+                  <br /> 37-100 Łańcut
+                </p>
               </Link>
               <p>
                 tel.: 17 225 25 82
@@ -35,53 +31,45 @@ export const Footer = () => {
 
           <div className="footer-icons">
             <Link href="https://www.facebook.com/zs2lancut/">
-              <a>
-                <Image
-                  width={21}
-                  height={21}
-                  src="/icon-facebook.svg"
-                  alt="Szkolny Facebook"
-                />
-              </a>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-facebook.svg"
+                alt="Szkolny Facebook"
+              />
             </Link>
             <Link href="https://www.instagram.com/zs2lancut/">
-              <a>
-                <Image
-                  width={21}
-                  height={21}
-                  src="/icon-instagram.svg"
-                  alt="Szkolny Instagram"
-                />
-              </a>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-instagram.svg"
+                alt="Szkolny Instagram"
+              />
             </Link>
             <Link href="https://www.youtube.com/channel/UCd9cNUlyvaCmKVMbzBlVvGg/videos">
-              <a>
-                <Image
-                  width={21}
-                  height={21}
-                  src="/icon-youtube.svg"
-                  alt="Szkolny Youtube"
-                />
-              </a>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-youtube.svg"
+                alt="Szkolny Youtube"
+              />
             </Link>
             <Link href="https://www.tiktok.com/@zs2lancut">
-              <a>
-                <Image
-                  width={21}
-                  height={21}
-                  src="/icon-tiktok.svg"
-                  alt="Szkolny Tiktok"
-                />
-              </a>
+              <Image
+                width={21}
+                height={21}
+                src="/icon-tiktok.svg"
+                alt="Szkolny Tiktok"
+              />
             </Link>
           </div>
         </div>
       </div>
       <p className="subtext">
         <Link href="https://media.graphassets.com/zG7PkIAqTveHpA7HKki6">
-          <a>Polityka prywatności </a>
+          Polityka prywatności
         </Link>
-        | © 2022 Adam Majcher. All rights reserved
+        &nbsp;| © 2023 Adam Majcher. All rights reserved
       </p>
     </footer>
   )

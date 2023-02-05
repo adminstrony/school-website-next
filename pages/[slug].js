@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 import { Layout } from '../templates/Layout'
 const graphcms = new GraphQLClient(
@@ -23,17 +23,15 @@ const Article = ({ article }) => {
         <div className="article-image-wrapper">
           {article.kategoria === 'Aktualnosci' && (
             <Link href={article.glowneZdjecie.url}>
-              <a>
-                <Image
-                  src={article.glowneZdjecie.url}
-                  alt=""
-                  width={710}
-                  height={525}
-                  quality={100}
-                  priority
-                  className="article-image"
-                />
-              </a>
+              <Image
+                src={article.glowneZdjecie.url}
+                alt=""
+                width={710}
+                height={525}
+                quality={100}
+                priority
+                className="article-image"
+              />
             </Link>
           )}
         </div>
@@ -70,15 +68,7 @@ const Article = ({ article }) => {
                 <span>Galeria zdjęć:</span>
                 {article.zdjecia.map((img, i) => (
                   <Link key={i} href={img.url}>
-                    <a>
-                      <Image
-                        src={img.url}
-                        alt=""
-                        width={710}
-                        height={525}
-                        quality={100}
-                      />
-                    </a>
+                    <Image src={img.url} alt="" width={710} height={525} />
                   </Link>
                 ))}
               </div>
