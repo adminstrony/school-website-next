@@ -104,7 +104,7 @@ export async function getStaticPaths() {
   const paths = article.map(({ slug }) => ({
     params: { slug },
   }))
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
