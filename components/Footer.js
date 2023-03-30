@@ -20,7 +20,7 @@ export const Footer = () => {
               </Link>
               <p>
                 tel.: 17 225 25 82
-                <br /> sekretariat@zs2lancut.pl
+                <br /> zs2@powiatlancut.pl
               </p>
               <p>
                 Skrzynka ePUAP
